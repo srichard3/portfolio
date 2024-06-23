@@ -15,7 +15,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <div className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
+    <div className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl'>
       {/* Logo */}
       <div className='md:hidden lg:flex flex w-1/3'>
         <Link
@@ -34,7 +34,7 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      {/* Links */}
+      {/* Page Links */}
       <div className='hidden md:flex gap-4 w-1/3 justify-center'>
         {links.map(link => (
           <NavLink link={link} key={link.title} />
@@ -52,7 +52,7 @@ const Navbar = () => {
           <Image src='/linkedin.png' width={24} height={24} alt='LinkedIn' />
         </Link>
         <Link href='https://linktr.ee/samrichard3' target='_blank'>
-          <Image src='/soccer-ball.png' width={24} height={24} alt='LinkTree' />
+          <Image src='/linktree.png' width={24} height={24} alt='LinkTree' />
         </Link>
       </div>
       {/* Menu */}
