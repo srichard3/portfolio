@@ -1,10 +1,10 @@
 'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import NavLink from './navlink'
 import { motion } from 'framer-motion'
-import { list } from 'postcss'
 
 const links = [
   { href: '/', title: 'Home' },
