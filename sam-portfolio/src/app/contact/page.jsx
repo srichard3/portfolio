@@ -87,7 +87,7 @@ const ContactPage = () => {
             className='bg-transparent border-b-2 border-b-black outline-none'
           />
           {/* Send Button */}
-          <button className='bg-gradient-to-r from-blue-200 to-blue-300 rounded font-semibold text-gray-600 p-4'>
+          <button className='bg-gradient-to-r from-blue-400 to-blue-500 rounded font-semibold text-gray-600 p-4'>
             Send
           </button>
           {/* Success/Error Message */}
