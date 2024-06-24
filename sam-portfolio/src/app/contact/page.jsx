@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser'
 const ContactPage = () => {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
-  const text = 'Say Hello'
+  const text = 'Say Hello 😊'
 
   const form = useRef()
 
@@ -40,10 +40,10 @@ const ContactPage = () => {
       animate={{ y: '0%' }}
       transition={{ duration: 1 }}
     >
-      <div className='h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48'>
+      <div className='h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 lg:gap-20 items-center'>
         {/* Greeting */}
-        <div className='h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl'>
-          <div className='bg-red-300'>
+        <div className='h-1/4 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl'>
+          <div className=''>
             {text.split('').map((letter, index) => (
               <motion.span
                 key={index}
@@ -57,7 +57,7 @@ const ContactPage = () => {
               >
                 {letter}
               </motion.span>
-            ))}
+            ))}{' '}
             😊
           </div>
         </div>
@@ -65,7 +65,7 @@ const ContactPage = () => {
         <form
           onSubmit={sendEmail}
           ref={form}
-          className='h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24'
+          className='h-4/6 lg:h-5/6 lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24'
         >
           {/* Message */}
           <span>Dear Sam,</span>
