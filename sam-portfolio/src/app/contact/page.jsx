@@ -6,7 +6,7 @@ import emailjs from '@emailjs/browser'
 const ContactPage = () => {
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState(false)
-  const text = 'Say Hello 😊'
+  const text = 'Say Hello!'
 
   const form = useRef()
 
@@ -50,22 +50,21 @@ const ContactPage = () => {
                 initial={{ opacity: 1 }}
                 animate={{ opacity: 0 }}
                 transition={{
-                  duration: 5,
+                  duration: 3,
                   repeat: Infinity,
-                  delay: index * 0.1
+                  delay: index * 0.18
                 }}
               >
                 {letter}
               </motion.span>
-            ))}{' '}
-            😊
+            ))}
           </div>
         </div>
         {/* Email Form */}
         <form
           onSubmit={sendEmail}
           ref={form}
-          className='h-4/6 lg:h-5/6 lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24'
+          className='h-4/6 lg:h-5/6 lg:w-1/2 bg-neutral-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24'
         >
           {/* Message */}
           <span>Dear Sam,</span>
