@@ -44,16 +44,12 @@ const Navbar = () => {
 
   return (
     <div className='h-full flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 text-xl'>
-      {/* Logo */}
+      {/* LOGO */}
       <div className='md:hidden lg:flex flex w-1/3'>
         <Link
           href='/'
           className='text-sm bg-black rounded-md p-1 font-semibold flex items-center justify-center opacity-50 transition duration-300 ease-in-out transform hover:opacity-100 hover:scale-105'
         >
-          {/* <span className='text-white mr-1'>Sam</span>
-          <span className='w-12 h-8 rounded bg-white text-black flex items-center justify-center'>
-            .dev
-          </span> */}
           <Image
             src='/sam-dev-logo.png'
             width={140}
@@ -62,13 +58,13 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      {/* Page Links */}
+      {/* PAGE LINKS */}
       <div className='hidden md:flex gap-4 w-1/3 justify-center'>
         {links.map(link => (
           <NavLink link={link} key={link.title} />
         ))}
       </div>
-      {/* Socials */}
+      {/* SOCIAL LINKS */}
       <div className='hidden md:flex gap-4 w-1/3 justify-end'>
         <Link href='https://github.com/srichard3' target='_blank'>
           <Image
@@ -101,9 +97,9 @@ const Navbar = () => {
           />
         </Link>
       </div>
-      {/* Hamburger Menu */}
+      {/* HAMBURGER MENU */}
       <div className='md:hidden'>
-        {/* Hamburger */}
+        {/* HAMBURGER BUTTON */}
         <button
           className='w-10 h-8 flex flex-col justify-between z-50 relative'
           onClick={() => setMenuOpen(prev => !prev)}
@@ -124,7 +120,7 @@ const Navbar = () => {
             className='w-10 h-1 bg-black rounded origin-left'
           ></motion.div>
         </button>
-        {/* Menu Items */}
+        {/* MENU ITEMS */}
         {menuOpen && (
           <motion.div
             variants={listVariants}

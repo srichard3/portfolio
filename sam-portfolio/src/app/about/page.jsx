@@ -497,8 +497,9 @@ const AboutPage = () => {
       className='min-h-full items-center justify-center xl:py-0'
     >
       <div className='flex items-top mx-auto px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 gap-14 py-12'>
-        {/* Tabs List */}
+        {/* TABS LIST */}
         <div className='flex flex-col items-top justify-center h-full w-1/2 max-w-[380px] mt-4 mx-auto xl:mx-0 gap-8'>
+          {/* EXPERIENCE */}
           <button
             onClick={() => setActiveTab('experience')}
             className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
@@ -509,6 +510,7 @@ const AboutPage = () => {
           >
             Experience
           </button>
+          {/* SKILLS */}
           <button
             onClick={() => setActiveTab('skills')}
             className={`font-mono cursor-pointer transition duration-300 ease-in-out transform  text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
@@ -519,6 +521,7 @@ const AboutPage = () => {
           >
             Skills
           </button>
+          {/* EDUCATION */}
           <button
             onClick={() => setActiveTab('education')}
             className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
@@ -529,7 +532,7 @@ const AboutPage = () => {
           >
             Education
           </button>
-
+          {/* INVOLVEMENTS */}
           <button
             onClick={() => setActiveTab('involvements')}
             className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
@@ -540,6 +543,7 @@ const AboutPage = () => {
           >
             Involvements
           </button>
+          {/* ABOUT */}
           <button
             onClick={() => setActiveTab('about')}
             className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
@@ -551,11 +555,14 @@ const AboutPage = () => {
             About
           </button>
         </div>
+
+        {/* TABS CONTENT */}
         <div className='min-h-[70vh] w-full'>
-          {/* Experience */}
+          {/* EXPERIENCE */}
           {activeTab === 'experience' && (
             <div className='w-full'>
               <div className='flex flex-col gap-[30px] text-center xl:text-left'>
+                {/* HEADER */}
                 <h3 className='text-4xl text-neutral-300 font-bold'>
                   {' '}
                   {experience.title}{' '}
@@ -563,6 +570,7 @@ const AboutPage = () => {
                 <p className='max-w-[700px] text-white/60 mx-auto xl:mx-0'>
                   {experience.desc}
                 </p>
+                {/* EXPERIENCE LIST */}
                 <div className='h-[400px]'>
                   <ul className='font-mono grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
                     {experience.info.map((exp, index) => (
@@ -586,15 +594,18 @@ const AboutPage = () => {
             </div>
           )}
 
+          {/* EDUCATION */}
           {activeTab === 'education' && (
             <div className='w-full'>
               <div className='flex flex-col gap-[30px] text-center xl:text-left'>
+                {/* HEADER */}
                 <h3 className='text-4xl text-neutral-200 font-bold'>
                   {education.title}
                 </h3>
                 <p className='max-w-[700px] text-white/60 mx-auto xl:mx-0'>
                   {education.desc}
                 </p>
+                {/* EDUCATION LIST */}
                 <div className='h-[400px]'>
                   <ul className='grid grid-cols-1 gap-[30px]'>
                     {education.info.map((ed, index) => (
@@ -627,11 +638,12 @@ const AboutPage = () => {
             </div>
           )}
 
-          {/* Skills */}
+          {/* SKILLS */}
           {activeTab === 'skills' && (
             <div className='w-full h-full'>
               <div className='flex flex-col gap-[30px]'>
                 <div className='flex flex-col gap-[30px] text-center xl:text-left'>
+                  {/* HEADER */}
                   <h3 className='text-4xl font-bold text-neutral-200'>
                     {skills.title}
                   </h3>
@@ -639,9 +651,11 @@ const AboutPage = () => {
                     {skills.desc}
                   </p>
                 </div>
+                {/* SKILLS LIST */}
                 <div>
+                  {/* LANGUAGES */}
                   <h4 className='text-xl text-neutral-700 mb-3'>
-                    // Languages
+                    {'//'} Languages
                   </h4>
                   <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]'>
                     {skills.languages.map((skill, index) => (
@@ -664,8 +678,9 @@ const AboutPage = () => {
                   </ul>
                 </div>
                 <div>
+                  {/* LIBRARIES & FRAMEWORKS */}
                   <h4 className='text-xl text-neutral-700 mb-3'>
-                    // Libraries & Frameworks
+                    {'//'} Libraries & Frameworks
                   </h4>
                   <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]'>
                     {skills.librariesFrameworks.map((skill, index) => (
@@ -688,8 +703,9 @@ const AboutPage = () => {
                   </ul>
                 </div>
                 <div>
+                  {/* DEVELOPER TOOLS */}
                   <h4 className='text-xl text-neutral-700 mb-3'>
-                    // Developer Tools
+                    {'//'} Developer Tools
                   </h4>
                   <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]'>
                     {skills.developerTools.map((skill, index) => (
@@ -715,10 +731,11 @@ const AboutPage = () => {
             </div>
           )}
 
-          {/* About */}
+          {/* ABOUT */}
           {activeTab === 'about' && (
             <div className='w-full text-center xl:text-left'>
               <div className='flex flex-col gap-[30px]'>
+                {/* HEADER */}
                 <div className='flex flex-row items-center gap-[30px]'>
                   <Image
                     src='/samuel-portrait.png'
@@ -734,6 +751,7 @@ const AboutPage = () => {
                 <p className='max-w-[700px] text-white/60 mx-auto xl:mx-0'>
                   {about.desc}
                 </p>
+                {/* INFO LIST */}
                 <ul className='grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0'>
                   {about.info.map((info, index) => (
                     <li

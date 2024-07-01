@@ -53,15 +53,15 @@ const PortfolioPage = () => {
       transition={{ delay: 0.6, duration: 0.6 }}
     >
       <div className='h-[600vh] relative' ref={ref}>
-        {/* Portfolio Header */}
         <div className='w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center text-8xl text-center gap-10'>
+          {/* PORTFOLIO HEADER */}
           <span
             className='animate-text-gradient bg-gradient-to-br from-neutral-400 via-neutral-800 to-neutral-400
     bg-[200%_auto] bg-clip-text text-transparent p-4'
           >
             My Works
           </span>
-          {/* Scroll Arrow SVG */}
+          {/* SCROLL ARROW SVG */}
           <motion.svg
             initial={{ opacity: 0.1, y: 0 }}
             animate={{ opacity: 0.4, y: '10px' }}
@@ -86,9 +86,10 @@ const PortfolioPage = () => {
             <path d='M15 11L12 14L9 11' stroke='#A3A3A3' strokeWidth='1'></path>
           </motion.svg>
         </div>
-        {/* Portfolio Items */}
+        {/* PORTFOLIO ITEMS */}
         <div className='sticky top-0 flex h-screen gap-4 items-center overflow-hidden'>
           <motion.div style={{ x }} className='flex'>
+            {/* BLANK PAGE */}
             <div className='h-screen w-screen flex items-center justify-center bg-gradient-to-r from-black to-black' />
             {items.map(item => (
               <div
@@ -96,19 +97,19 @@ const PortfolioPage = () => {
                 key={item.id}
               >
                 <div className='flex flex-col gap-8 text-white'>
-                  {/* Title */}
+                  {/* TITLE */}
                   <h1 className='text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl'>
                     {item.title}
                   </h1>
-                  {/* Image */}
+                  {/* IMAGE */}
                   <div className='relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]'>
                     <Image src={item.img} alt='' fill />
                   </div>
-                  {/* Description */}
+                  {/* DESCRIPTION */}
                   <p className='w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]'>
                     {item.desc}
                   </p>
-                  {/* Demo Button */}
+                  {/* DEMO BUTTON */}
                   <Link href={item.link} className='flex justify-end'>
                     <button className='p-4 text-xs lg:text-2xl md:text-xl md:p-6 md:text-md lg:p-7 lg:text-lg text-white font-semibold m-4 rounded-lg ring-2 ring-white hover:ring-blac hover:bg-white hover:text-neutral-600'>
                       Demo
@@ -117,15 +118,17 @@ const PortfolioPage = () => {
                 </div>
               </div>
             ))}
+            {/* BLANK PAGE */}
             <div className='h-screen w-screen flex items-center justify-center bg-black' />
           </motion.div>
         </div>
       </div>
-      {/* Contact Section */}
+      {/* OTHER PROJECTS SECTION */}
       <div className='w-screen h-screen flex flex-col gap-14 items-center justify-center text-center bg-gradient-to-b from-black to-neutral-300'>
+        {/* HEADER */}
         <h1 className='text-8xl'>Other projects.</h1>
         <div className='relative'>
-          {/* Spinning Text */}
+          {/* SPINNING TEXT */}
           <motion.svg
             animate={{ rotate: 360 }}
             transition={{ duration: 8, ease: 'linear', repeat: Infinity }}
@@ -147,7 +150,7 @@ const PortfolioPage = () => {
               </textPath>
             </text>
           </motion.svg>
-          {/* Contact Me Button */}
+          {/* CONTACT BUTTON */}
           <Link
             href='/contact'
             className='text-xs md:text-sm w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center'

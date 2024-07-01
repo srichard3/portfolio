@@ -24,6 +24,7 @@ const TransitionProvider = ({ children }) => {
   return (
     <AnimatePresence mode='wait'>
       <div key={pathName} className={getBackgroundClass(pathName)}>
+        {/* VERTICAL ANIMATION */}
         {/* <motion.div
           className='h-screen w-screen fixed bg-black rounded-b-[100px] z-40'
           animate={{ height: '0vh' }}
@@ -44,6 +45,7 @@ const TransitionProvider = ({ children }) => {
           initial={{ height: '140vh' }}
           animate={{ height: '0vh', transition: { delay: 0.5 } }}
         /> */}
+        {/* HORIZONTAL ANIMATION */}
         <motion.div
           className='fixed top-0 bottom-0 right-full w-screen h-screen z-30 bg-gradient-to-r from-black to-neutral-800'
           initial={{ x: '100%', width: '100%' }}
@@ -63,10 +65,13 @@ const TransitionProvider = ({ children }) => {
           animate={{ x: '0%', width: '0%' }}
           transition={{ delay: 0.4, duration: 0.6, ease: 'easeInOut' }}
         />
+        {/* NAVBAR */}
         <div className='h-24'>
           <Navbar />
         </div>
+        {/* PAGE CONTENT */}
         <div className='min-h-[calc(100vh-6rem)]'>{children}</div>
+        {/* FOOTER */}
         <footer className='flex items-center justify-center h-8 text-neutral-800 bg-black'>
           @2024 Sam Richard. All rights reserved.
         </footer>

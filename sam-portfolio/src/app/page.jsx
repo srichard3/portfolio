@@ -1,8 +1,6 @@
 'use client'
 
-import Image from 'next/image'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import Link from 'next/link'
 import { useRef } from 'react'
 
 const Homepage = () => {
@@ -19,7 +17,7 @@ const Homepage = () => {
       transition={{ delay: 0.6, duration: 0.6 }}
     >
       <div className='h-[600vh] relative' ref={ref}>
-        {/* Portfolio Header */}
+        {/* HOME HEADER */}
         <div className='w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center text-8xl text-center'>
           <div className='flex flex-col items-center justify-center'>
             <div className='text-9xl bg-gradient-to-br from-neutral-600 via-black to-neutral-600 bg-clip-text text-transparent'>
@@ -32,7 +30,7 @@ const Homepage = () => {
               Software Engineer
             </span>
           </div>
-          {/* Scroll Arrow SVG */}
+          {/* SCROLL ARROW SVG */}
           <motion.svg
             initial={{ opacity: 0.1, y: 0 }}
             animate={{ opacity: 0.4, y: '10px' }}
@@ -57,7 +55,7 @@ const Homepage = () => {
             <path d='M15 11L12 14L9 11' stroke='#A3A3A3' strokeWidth='1'></path>
           </motion.svg>
         </div>
-        {/* Portfolio Items */}
+        {/* HOME ITEMS */}
         <div className='sticky top-0 flex h-screen gap-4 items-center overflow-hidden'>
           <motion.div style={{ x }} className='flex'>
             <div className='h-screen w-screen flex items-center justify-center bg-gradient-to-r from-black to-black' />
