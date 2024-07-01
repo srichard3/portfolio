@@ -8,8 +8,12 @@ const NavLink = ({ link }) => {
 
   return (
     <Link
-      className={`rounded p-1 ${
-        pathName === link.href && 'bg-black text-white'
+      className={`rounded transition duration-100 ease-in-out transform p-1 opacity-50 hover:opacity-100 hover:scale-105 ${
+        pathName === link.href
+          ? pathName === '/'
+            ? 'text-white opacity-100 hover:text-black'
+            : 'text-accent/50 opacity-100 hover:text-black'
+          : ''
       }`}
       href={link.href}
     >

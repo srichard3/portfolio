@@ -35,15 +35,15 @@ const ContactPage = () => {
 
   return (
     <motion.div
-      className='h-full'
-      initial={{ y: '-200vh' }}
-      animate={{ y: '0%' }}
-      transition={{ duration: 1 }}
+      className='h-full overflow-auto'
+      initial={{ x: '200vh' }}
+      animate={{ x: '0%' }}
+      transition={{ delay: 0.6, duration: 0.6 }}
     >
-      <div className='h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 lg:gap-20 items-center'>
+      <div className='h-full w-full flex flex-col px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 items-center relative z-10'>
         {/* Greeting */}
-        <div className='h-1/4 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl'>
-          <div className=''>
+        <div className='h-1/4 w-full text-accent flex items-center justify-center text-3xl my-16 sm:text-4xl md:text-5xl lg:text-6xl'>
+          <div>
             {text.split('').map((letter, index) => (
               <motion.span
                 key={index}
@@ -61,47 +61,59 @@ const ContactPage = () => {
           </div>
         </div>
         {/* Email Form */}
-        <form
-          onSubmit={sendEmail}
-          ref={form}
-          className='h-4/6 lg:h-5/6 lg:w-1/2 bg-neutral-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-24'
-        >
-          {/* Message */}
-          <span>Dear Sam,</span>
-          <textarea
-            rows={6}
-            className='bg-transparent border-b-2 border-b-black outline-none resize-none'
-            name='message'
-          />
-          {/* Email Address */}
-          <span>My email address is:</span>
-          <input
-            name='email'
-            type='text'
-            className='bg-transparent border-b-2 border-b-black outline-none'
-          />
-          <span>Regards,</span>
-          <input
-            name='from_name'
-            type='text'
-            className='bg-transparent border-b-2 border-b-black outline-none'
-          />
-          {/* Send Button */}
-          <button className='bg-gradient-to-r from-blue-400 to-blue-500 rounded font-semibold text-gray-600 p-4'>
-            Send
-          </button>
-          {/* Success/Error Message */}
-          {success && (
-            <span className='text-green-600 font-semibold'>
-              Your message has been sent successfully!
+        <div className='w-full h-full flex items-center justify-center'>
+          <form
+            onSubmit={sendEmail}
+            ref={form}
+            className='w-5/6 h-5/6 bg-neutral-800 rounded-xl text-xl flex flex-col gap-2 justify-center p-6 sm:p-12 md:p-16 lg:p-20'
+          >
+            {/* Message */}
+            <span className='text-base font-mono text-neutral-400'>
+              Dear Sam,
             </span>
-          )}
-          {error && (
-            <span className='text-red-600 font-semibold'>
-              Something went wrong!
+            <textarea
+              rows={3}
+              className='text-sm placeholder:font-mono placeholder:text-neutral-500 text-neutral-400 h-40 md:h-60 lg:h-80 bg-neutral-800 border-2 border-neutral-500 rounded-md p-3 mb-4 transition duration-300 ease-in-out transform hover:bg-neutral-700 focus:outline-none focus:border-none focus:ring-2 focus:ring-accent/50'
+              name='message'
+              placeholder='// message'
+            />
+            {/* Email Address */}
+            <span className='text-base font-mono text-neutral-400'>
+              My email address is:
             </span>
-          )}
-        </form>
+            <input
+              name='email'
+              type='text'
+              className='text-sm placeholder:font-mono placeholder:text-neutral-500 text-neutral-400 bg-neutral-800 border-2 border-neutral-500 rounded-md p-4 mb-4 h-10 md:h-12 transition duration-300 ease-in-out transform hover:bg-neutral-700 focus:outline-none focus:border-none focus:ring-2 focus:ring-accent/50'
+              placeholder='// email'
+            />
+            <span className='text-base font-mono text-neutral-400'>
+              Regards,
+            </span>
+            <input
+              name='from_name'
+              type='text'
+              className='text-sm placeholder:font-mono placeholder:text-neutral-500 text-neutral-400 bg-neutral-800 border-2 border-neutral-500 rounded-md p-4 mb-4 h-10 md:h-12 transition duration-300 ease-in-out transform hover:bg-neutral-700 focus:outline-none focus:border-none focus:ring-2 focus:ring-accent/50'
+              placeholder='// name'
+            />
+            {/* Send Button */}
+            <button className='w-1/3 sm:w-1/4 bg-gradient-to-br from-neutral-600 to-neutral-900 rounded-full font-semibold text-neutral-400 p-4 transition duration-300 ease-in-out transform hover:from-accent/30 hover:to-accent/60 hover:text-white hover:shadow-lg hover:scale-105'>
+              Send
+            </button>
+
+            {/* Success/Error Message */}
+            {success && (
+              <span className='font-mono text-sm text-green-600 opacity-60'>
+                Your message has been sent successfully!
+              </span>
+            )}
+            {error && (
+              <span className='font-mono text-sm text-it text-red-600 opacity-60'>
+                Something went wrong!
+              </span>
+            )}
+          </form>
+        </div>
       </div>
     </motion.div>
   )

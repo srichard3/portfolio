@@ -1,11 +1,11 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
-import TransitionProvider from "../components/transitionProvider";
+import { Inter } from 'next/font/google';
+import './globals.css';
+import TransitionProvider from '../components/transitionProvider';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "Sam Richard Portfolio",
+  title: 'Sam Richard Portfolio',
   description: "Sam Richard's portfolio site",
 };
 
@@ -15,6 +15,6 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <TransitionProvider>{children}</TransitionProvider>
       </body>
-    </html>
+    </html >
   );
 }

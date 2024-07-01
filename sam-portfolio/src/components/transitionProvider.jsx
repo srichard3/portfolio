@@ -8,13 +8,23 @@ import { usePathname } from 'next/navigation'
 const TransitionProvider = ({ children }) => {
   const pathName = usePathname()
 
+  const getBackgroundClass = pathName => {
+    switch (pathName) {
+      case '/about':
+        return 'w-screen h-screen bg-gradient-to-b from-neutral-800 to-black overflow-auto'
+      case '/portfolio':
+        return 'w-screen h-screen bg-gradient-to-b from-neutral-800 to-black'
+      case '/contact':
+        return 'w-screen h-screen bg-gradient-to-b from-neutral-800 to-black overflow-auto'
+      default:
+        return 'w-screen h-screen bg-gradient-to-b from-neutral-200 to-black overflow-auto'
+    }
+  }
+
   return (
     <AnimatePresence mode='wait'>
-      <div
-        key={pathName}
-        className='w-screen h-screen bg-gradient-to-b from-neutral-200 to-black'
-      >
-        <motion.div
+      <div key={pathName} className={getBackgroundClass(pathName)}>
+        {/* <motion.div
           className='h-screen w-screen fixed bg-black rounded-b-[100px] z-40'
           animate={{ height: '0vh' }}
           exit={{ height: '140vh' }}
@@ -33,11 +43,33 @@ const TransitionProvider = ({ children }) => {
           className='h-screen w-screen fixed bg-black rounded-t-[100px] bottom-0 z-30'
           initial={{ height: '140vh' }}
           animate={{ height: '0vh', transition: { delay: 0.5 } }}
+        /> */}
+        <motion.div
+          className='fixed top-0 bottom-0 right-full w-screen h-screen z-30 bg-gradient-to-r from-black to-neutral-800'
+          initial={{ x: '100%', width: '100%' }}
+          animate={{ x: '0%', width: '0%' }}
+          exit={{ x: ['0%', '100%'], width: ['0%', '100%'] }}
+          transition={{ duration: 0.6, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className='fixed top-0 bottom-0 right-full w-screen h-screen z-20 bg-gradient-to-r from-neutral-600 to-neutral-900'
+          initial={{ x: '100%', width: '100%' }}
+          animate={{ x: '0%', width: '0%' }}
+          transition={{ delay: 0.2, duration: 0.6, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className='fixed top-0 bottom-0 right-full w-screen h-screen z-10 bg-gradient-to-r from-neutral-800 to-black'
+          initial={{ x: '100%', width: '100%' }}
+          animate={{ x: '0%', width: '0%' }}
+          transition={{ delay: 0.4, duration: 0.6, ease: 'easeInOut' }}
         />
         <div className='h-24'>
           <Navbar />
         </div>
-        <div className='h-[calc(100vh-6rem)]'>{children}</div>
+        <div className='min-h-[calc(100vh-6rem)]'>{children}</div>
+        <footer className='flex items-center justify-center h-8 text-neutral-800 bg-black'>
+          @2024 Sam Richard. All rights reserved.
+        </footer>
       </div>
     </AnimatePresence>
   )

@@ -15,7 +15,7 @@ const items = [
   },
   {
     id: 2,
-    color: 'from-neutral-700 to-neutral-600',
+    color: 'from-neutral-700 to-neutral-500',
     title: 'Next.js Medium Blog',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
     img: '/placeholder.jpg',
@@ -23,7 +23,7 @@ const items = [
   },
   {
     id: 3,
-    color: 'from-neutral-600 to-neutral-500',
+    color: 'from-neutral-500 to-neutral-700',
     title: 'Vanilla Book App',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
     img: '/placeholder.jpg',
@@ -31,7 +31,7 @@ const items = [
   },
   {
     id: 4,
-    color: 'from-neutral-500 to-neutral-400',
+    color: 'from-neutral-700 to-black',
     title: 'Spotify Music App',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
     img: '/placeholder.jpg',
@@ -48,14 +48,19 @@ const PortfolioPage = () => {
   return (
     <motion.div
       className='h-full'
-      initial={{ y: '-200vh' }}
-      animate={{ y: '0%' }}
-      transition={{ duration: 1 }}
+      initial={{ x: '200vh' }}
+      animate={{ x: '0%' }}
+      transition={{ delay: 0.6, duration: 0.6 }}
     >
       <div className='h-[600vh] relative' ref={ref}>
         {/* Portfolio Header */}
         <div className='w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center text-8xl text-center gap-10'>
-          My Works
+          <span
+            className='animate-text-gradient bg-gradient-to-br from-neutral-400 via-neutral-800 to-neutral-400
+    bg-[200%_auto] bg-clip-text text-transparent p-4'
+          >
+            My Works
+          </span>
           {/* Scroll Arrow SVG */}
           <motion.svg
             initial={{ opacity: 0.1, y: 0 }}
@@ -112,12 +117,12 @@ const PortfolioPage = () => {
                 </div>
               </div>
             ))}
+            <div className='h-screen w-screen flex items-center justify-center bg-black' />
           </motion.div>
         </div>
       </div>
       {/* Contact Section */}
-      <div className='w-screen h-screen flex flex-col gap-16 items-center justify-center text-center bg--neutral-100'>
-        <h1 className='text-8xl'>Let&apos;s Connect!</h1>
+      <div className='w-screen h-screen flex flex-col gap-14 items-center justify-center text-center bg-gradient-to-b from-black to-neutral-300'>
         <div className='relative'>
           {/* Spinning Text */}
           <motion.svg
@@ -149,6 +154,7 @@ const PortfolioPage = () => {
             Contact Me
           </Link>
         </div>
+        <h1 className='text-8xl'>Let&apos;s Connect!</h1>
       </div>
     </motion.div>
   )

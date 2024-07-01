@@ -1,3 +1,5 @@
+const { SiK3S } = require('react-icons/si');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -12,7 +14,26 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      animation: {
+        "text-gradient": "text 3.5s linear infinite",
+      },
+      keyframes: {
+        text: {
+          to: {
+            backgroundPosition: "-200% center",
+          },
+        }
+      },
+      colors: {
+        accent: '#FFD700',
+        red: '#FF5733',
+      },
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+        mono: ["IBM Plex Mono", "monospace"],
+      },
     },
+
   },
   plugins: [],
 };
