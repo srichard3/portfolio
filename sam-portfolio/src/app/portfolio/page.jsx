@@ -8,7 +8,7 @@ const items = [
   {
     id: 1,
     color: 'from-black to-neutral-700',
-    title: 'React Commerce',
+    title: 'Gruuper',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
     img: '/placeholder.jpg',
     link: 'https://samrichard.dev'
@@ -16,7 +16,7 @@ const items = [
   {
     id: 2,
     color: 'from-neutral-700 to-neutral-500',
-    title: 'Next.js Medium Blog',
+    title: 'Kazoo Bugaloo',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
     img: '/placeholder.jpg',
     link: 'https://samrichard.dev'
@@ -24,7 +24,7 @@ const items = [
   {
     id: 3,
     color: 'from-neutral-500 to-neutral-700',
-    title: 'Vanilla Book App',
+    title: 'TaskManager',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores ab id ad nesciunt quo aut corporis modi? Voluptate, quos sunt dolorum facilis, id eum sequi placeat accusantium saepe eos laborum.',
     img: '/placeholder.jpg',
     link: 'https://samrichard.dev'
@@ -123,6 +123,7 @@ const PortfolioPage = () => {
       </div>
       {/* Contact Section */}
       <div className='w-screen h-screen flex flex-col gap-14 items-center justify-center text-center bg-gradient-to-b from-black to-neutral-300'>
+        <h1 className='text-8xl'>Other projects.</h1>
         <div className='relative'>
           {/* Spinning Text */}
           <motion.svg
@@ -154,7 +155,6 @@ const PortfolioPage = () => {
             Contact Me
           </Link>
         </div>
-        <h1 className='text-8xl'>Let&apos;s Connect!</h1>
       </div>
     </motion.div>
   )
