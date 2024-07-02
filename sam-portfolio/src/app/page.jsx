@@ -1,13 +1,10 @@
 'use client'
 
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useRef } from 'react'
 
 const Homepage = () => {
   const ref = useRef()
-
-  const { scrollYProgress } = useScroll({ target: ref })
-  const x = useTransform(scrollYProgress, [0, 1], ['0%', '-80%'])
 
   return (
     <motion.div
