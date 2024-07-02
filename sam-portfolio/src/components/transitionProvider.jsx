@@ -72,8 +72,11 @@ const TransitionProvider = ({ children }) => {
         {/* PAGE CONTENT */}
         <div className='min-h-[calc(100vh-6rem)]'>{children}</div>
         {/* FOOTER */}
-        <footer className='flex items-center justify-center h-8 text-neutral-800 bg-black'>
-          @2024 Sam Richard. All rights reserved.
+        <footer className='text-xs sm:text-sm flex items-center justify-between h-10 text-neutral-600 bg-black'>
+          <div className='ml-4 lg:ml-10'>
+            @2024 Sam Richard. All rights reserved.
+          </div>
+          <div className='mr-4 lg:mr-10'>s.anthrichard02@gmail.com</div>
         </footer>
       </div>
     </AnimatePresence>

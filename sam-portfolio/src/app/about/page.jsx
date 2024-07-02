@@ -360,7 +360,6 @@ import {
   SiMongodb,
   SiFirebase,
   SiVite,
-  SiJson,
   SiFlask,
   SiXcode,
   SiPowerbi,
@@ -422,19 +421,19 @@ const education = {
       institution: 'Loyola Marymount University',
       degree: 'Bachelor of Computer Science',
       date: 'May 2024',
-      image: '/lmu-logo.png'
+      image: '/education/lmu-logo.png'
     },
     {
       institution: 'Loyola Marymount University',
       degree: 'Minor of Business Administration',
       date: 'May 2024',
-      image: '/lmu-cba-logo.jpg'
+      image: '/education/lmu-cba-logo.jpg'
     },
     {
       institution: 'Loyola Marymount University',
       degree: 'Entreprenuership Certificate',
       date: 'December 2023',
-      image: '/lmu-cba-logo.jpg'
+      image: '/education/lmu-cba-logo.jpg'
     }
   ]
 }
@@ -502,7 +501,7 @@ const AboutPage = () => {
           {/* EXPERIENCE */}
           <button
             onClick={() => setActiveTab('experience')}
-            className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
+            className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-base md:text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
               activeTab === 'experience'
                 ? 'text-accent bg-neutral-800 hover:scale-95'
                 : 'text-neutral-200 bg-none ring-2 ring-neutral-800 hover:scale-105'
@@ -513,7 +512,7 @@ const AboutPage = () => {
           {/* SKILLS */}
           <button
             onClick={() => setActiveTab('skills')}
-            className={`font-mono cursor-pointer transition duration-300 ease-in-out transform  text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
+            className={`font-mono cursor-pointer transition duration-300 ease-in-out transform  text-base md:text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
               activeTab === 'skills'
                 ? 'text-accent bg-neutral-800 hover:scale-95'
                 : 'text-neutral-200 bg-none ring-2 ring-neutral-800 hover:scale-105'
@@ -524,7 +523,7 @@ const AboutPage = () => {
           {/* EDUCATION */}
           <button
             onClick={() => setActiveTab('education')}
-            className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
+            className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-base md:text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
               activeTab === 'education'
                 ? 'text-accent bg-neutral-800 hover:scale-95'
                 : 'text-neutral-200 bg-none ring-2 ring-neutral-800 hover:scale-105'
@@ -535,7 +534,7 @@ const AboutPage = () => {
           {/* INVOLVEMENTS */}
           <button
             onClick={() => setActiveTab('involvements')}
-            className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
+            className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-base md:text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
               activeTab === 'involvements'
                 ? 'text-accent bg-neutral-800 hover:scale-95'
                 : 'text-neutral-200 bg-none ring-2 ring-neutral-800 hover:scale-105'
@@ -546,7 +545,7 @@ const AboutPage = () => {
           {/* ABOUT */}
           <button
             onClick={() => setActiveTab('about')}
-            className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
+            className={`font-mono cursor-pointer transition duration-300 ease-in-out transform text-base md:text-xl h-[64px] rounded-xl justify-center items-center lg:items-start ${
               activeTab === 'about'
                 ? 'text-accent bg-neutral-800 hover:scale-95'
                 : 'text-neutral-200 bg-none ring-2 ring-neutral-800 hover:scale-105'
@@ -571,25 +570,74 @@ const AboutPage = () => {
                   {experience.desc}
                 </p>
                 {/* EXPERIENCE LIST */}
-                <div className='h-[400px]'>
-                  <ul className='font-mono grid grid-cols-1 lg:grid-cols-2 gap-[30px]'>
-                    {experience.info.map((exp, index) => (
-                      <li
-                        key={index}
-                        className='bg-neutral-700 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1'
-                      >
-                        <span className='text-accent text-xs'>{exp.time}</span>
-                        <h3 className='text-neutral-200 text-xl max-w-[360px] min-h-[60px] text-center lg:text-left'>
-                          {exp.position}
-                        </h3>
-                        <div className='flex items-center gap-2'>
-                          <span className='w-[8px] h-[6px] rounded-tl-xl rounded-tr-xl rounded-bl-xl bg-accent'></span>
-                          <p className='text-white/60'>{exp.company}</p>
+                <div className='w-full'>
+                  <div className='font-mono flex flex-col w-full gap-8 sm:gap-0'>
+                    {experience.info.map((exp, index) =>
+                      index % 2 === 0 ? (
+                        <div className='w-full flex flex-row justify-start'>
+                          {/* Left Section */}
+                          <div
+                            key={index}
+                            className='bg-neutral-700 cursor-pointer w-full sm:w-2/5 transition duration-300 ease-in-out transform hover:scale-105 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1'
+                          >
+                            <span className='text-accent text-xs'>
+                              {exp.time}
+                            </span>
+                            <h3 className='text-neutral-200 text-xl max-w-[360px] min-h-[60px] text-center lg:text-left'>
+                              {exp.position}
+                            </h3>
+                            <div className='flex items-center gap-2'>
+                              <span className='w-[8px] h-[6px] rounded-tl-xl rounded-tr-xl rounded-bl-xl bg-accent'></span>
+                              <p className='text-white/60'>{exp.company}</p>
+                            </div>
+                          </div>
+                          {/* Center Section */}
+                          <div className='w-1/12 sm:w-1/6 opacity-0 sm:opacity-100 flex justify-center'>
+                            {/* Line */}
+                            <div className='w-1 h-full bg-accent/60 rounded relative'>
+                              {/* Circle */}
+                              <div className='absolute w-5 h-5 rounded-full ring-4 ring-accent/40 bg-white -left-2'></div>
+                            </div>
+                          </div>
+                          {/* Right Section */}
+                          <div className='w-0 sm:w-2/5'></div>
                         </div>
-                      </li>
-                    ))}
-                  </ul>
+                      ) : (
+                        index % 2 != 0 && (
+                          <div className='w-full flex flex-row justify-start'>
+                            {/* Left Section */}
+                            <div className='w-0 sm:w-2/5'></div>
+                            {/* Center Section */}
+                            <div className='w-0 sm:w-1/6 opacity-0 sm:opacity-100 flex justify-center'>
+                              {/* Line */}
+                              <div className='w-1 h-full bg-accent/60 rounded relative'>
+                                {/* Circle */}
+                                <div className='absolute w-5 h-5 rounded-full ring-4 ring-accent/40 bg-white -left-2'></div>
+                              </div>
+                            </div>
+                            {/* Right Section */}
+                            <div
+                              key={index}
+                              className='bg-neutral-700 cursor-pointer w-11/12 sm:w-2/5 transition duration-300 ease-in-out transform hover:scale-105 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1'
+                            >
+                              <span className='text-accent text-xs'>
+                                {exp.time}
+                              </span>
+                              <h3 className='text-neutral-200 text-xl max-w-[360px] min-h-[60px] text-center lg:text-left'>
+                                {exp.position}
+                              </h3>
+                              <div className='flex items-center gap-2'>
+                                <span className='w-[8px] h-[6px] rounded-tl-xl rounded-tr-xl rounded-bl-xl bg-accent'></span>
+                                <p className='text-white/60'>{exp.company}</p>
+                              </div>
+                            </div>
+                          </div>
+                        )
+                      )
+                    )}
+                  </div>
                 </div>
+                <div className='h-[30px]'></div>
               </div>
             </div>
           )}
@@ -657,19 +705,19 @@ const AboutPage = () => {
                   <h4 className='text-xl text-neutral-700 mb-3'>
                     {'//'} Languages
                   </h4>
-                  <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]'>
+                  <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4'>
                     {skills.languages.map((skill, index) => (
                       <li
                         key={index}
-                        className='bg-neutral-700 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center gap-1'
+                        className='bg-neutral-700 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
                       >
-                        <div className='w-full h-[180px] rounded-xl flex justify-center items-center group'>
-                          <div className='text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
+                        <div className='xl:w-full xl:h-[180px] rounded-xl flex justify-center items-center group'>
+                          <div className='text-3xl xl:text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
                             {skill.icon}
                           </div>
                         </div>
                         <div>
-                          <p className='capitalize text-neutral-300'>
+                          <p className='text-xs xl:text-base capitalize hover:text-accent text-neutral-300'>
                             {skill.name}
                           </p>
                         </div>
@@ -682,19 +730,19 @@ const AboutPage = () => {
                   <h4 className='text-xl text-neutral-700 mb-3'>
                     {'//'} Libraries & Frameworks
                   </h4>
-                  <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]'>
+                  <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4'>
                     {skills.librariesFrameworks.map((skill, index) => (
                       <li
                         key={index}
-                        className='bg-neutral-700 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center gap-1'
+                        className='bg-neutral-700 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
                       >
-                        <div className='w-full h-[180px] rounded-xl flex justify-center items-center group'>
-                          <div className='text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
+                        <div className='xl:w-full xl:h-[180px] rounded-xl flex justify-center items-center group'>
+                          <div className='text-3xl xl:text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
                             {skill.icon}
                           </div>
                         </div>
                         <div>
-                          <p className='capitalize text-neutral-300'>
+                          <p className='text-xs xl:text-base capitalize hover:text-accent text-neutral-300'>
                             {skill.name}
                           </p>
                         </div>
@@ -707,19 +755,19 @@ const AboutPage = () => {
                   <h4 className='text-xl text-neutral-700 mb-3'>
                     {'//'} Developer Tools
                   </h4>
-                  <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px]'>
+                  <ul className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:gap-[30px] gap-4'>
                     {skills.developerTools.map((skill, index) => (
                       <li
                         key={index}
-                        className='bg-neutral-700 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 h-[184px] py-6 px-10 rounded-xl flex flex-col justify-center items-center gap-1'
+                        className='bg-neutral-700 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
                       >
-                        <div className='w-full h-[180px] rounded-xl flex justify-center items-center group'>
-                          <div className='text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
+                        <div className='xl:w-full xl:h-[180px] rounded-xl flex justify-center items-center group'>
+                          <div className='text-3xl xl:text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
                             {skill.icon}
                           </div>
                         </div>
                         <div>
-                          <p className='capitalize text-neutral-300'>
+                          <p className='text-xs xl:text-base capitalize hover:text-accent text-neutral-300'>
                             {skill.name}
                           </p>
                         </div>
@@ -758,10 +806,10 @@ const AboutPage = () => {
                       key={index}
                       className='flex justify-start items-center gap-4'
                     >
-                      <span className='font-mono text-md text-white/60'>
+                      <span className='font-mono text-xs sm:text-sm md:text-base text-white/60'>
                         {info.fieldName}
                       </span>
-                      <span className='font-mono text-md text-accent/75'>
+                      <span className='font-mono text-xs sm:text-sm md:text-base text-accent/75'>
                         {info.value}
                       </span>
                     </li>

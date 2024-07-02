@@ -68,7 +68,7 @@ const Navbar = () => {
       <div className='hidden md:flex gap-4 w-1/3 justify-end'>
         <Link href='https://github.com/srichard3' target='_blank'>
           <Image
-            src='/github.png'
+            src='/socials/github.png'
             width={24}
             height={24}
             alt='GitHub'
@@ -80,7 +80,7 @@ const Navbar = () => {
           target='_blank'
         >
           <Image
-            src='/linkedin-black.png'
+            src='/socials/linkedin-black.png'
             width={24}
             height={24}
             alt='LinkedIn'
@@ -89,7 +89,7 @@ const Navbar = () => {
         </Link>
         <Link href='https://linktr.ee/samrichard3' target='_blank'>
           <Image
-            src='/linktree.png'
+            src='/socials/linktree.png'
             width={24}
             height={24}
             alt='LinkTree'

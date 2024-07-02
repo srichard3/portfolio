@@ -16,22 +16,22 @@ const Homepage = () => {
       animate={{ x: '0%' }}
       transition={{ delay: 0.6, duration: 0.6 }}
     >
-      <div className='h-[600vh] relative' ref={ref}>
+      <div className='h-full relative' ref={ref}>
         {/* HOME HEADER */}
         <div className='w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center text-8xl text-center'>
           <div className='flex flex-col items-center justify-center'>
-            <div className='text-9xl bg-gradient-to-br from-neutral-600 via-black to-neutral-600 bg-clip-text text-transparent'>
+            <div className='lg:text-9xl md:text-7xl text-6xl bg-gradient-to-br from-neutral-600 via-black to-neutral-600 bg-clip-text text-transparent'>
               Sam Richard
             </div>
             <span
-              className='text-2xl animate-text-gradient bg-gradient-to-r from-neutral-500 via-neutral-900 to-neutral-500
+              className='text-sm lg:text-2xl md:text-lg animate-text-gradient bg-gradient-to-r from-neutral-500 via-neutral-900 to-neutral-500
     bg-[200%_auto] bg-clip-text text-transparent mb-16'
             >
               Software Engineer
             </span>
           </div>
-          {/* SCROLL ARROW SVG */}
-          <motion.svg
+
+          {/* <motion.svg
             initial={{ opacity: 0.1, y: 0 }}
             animate={{ opacity: 0.4, y: '10px' }}
             transition={{
@@ -55,12 +55,11 @@ const Homepage = () => {
             <path d='M15 11L12 14L9 11' stroke='#A3A3A3' strokeWidth='1'></path>
           </motion.svg>
         </div>
-        {/* HOME ITEMS */}
         <div className='sticky top-0 flex h-screen gap-4 items-center overflow-hidden'>
           <motion.div style={{ x }} className='flex'>
             <div className='h-screen w-screen flex items-center justify-center bg-gradient-to-r from-black to-black' />
             <div className='h-screen w-screen flex items-center justify-center bg-black' />
-          </motion.div>
+          </motion.div>*/}
         </div>
       </div>
     </motion.div>
