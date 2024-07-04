@@ -149,13 +149,42 @@ const involvements = {
       title: 'VP of Spirituality & Social Justice',
       image: ''
     },
-    { fieldName: '', value: '', image: '' },
-    { fieldName: '', value: '', image: '' }
+    { involvement: 'LMU Roundnet', title: 'President', image: '' },
+    { involvement: 'Beta Theta Pi ', title: 'Vice President', image: '' },
+    {
+      involvement: 'LMU Campus Blood Drive',
+      title: 'Head Student Coordinator',
+      image: ''
+    },
+    {
+      involvement: 'Grace Hooper STEM Academy',
+      title: 'After-School Program Volunteer',
+      image: ''
+    },
+    {
+      involvement: 'Special Games',
+      title: 'Committee Member/Coach',
+      image: ''
+    },
+    { involvement: 'The Midnight Mission', title: 'Volunteer', image: '' },
+    { involvement: 'Share-A-Meal', title: 'Volunteer', image: '' },
+    {
+      involvement: 'Future Problem Solving Program International',
+      title: 'Evaluator/Coach',
+      image: ''
+    },
+    {
+      involvement: 'Association for Computing Machinery',
+      title: 'Member',
+      image: ''
+    },
+    { involvement: 'Entrepreneurship Society', title: 'Member', image: '' },
+    { involvement: 'Weightlifting Club', title: 'Member', image: '' }
   ]
 }
 
 const about = {
-  title: 'About Me',
+  title: 'My Bio',
   desc: 'Results-driven computer science and business graduate from Loyola Marymount University with a strong background in software development, artificial intelligence, and project management. Known for building products in modern frameworks and languages, mentoring students in AI/ML concepts, and spearheading innovative solutions in high-growth environments. A life-long learner, proactive team-player, and proponent of the growth mindset.',
   info: [
     { fieldName: '/name', value: 'Sam Richard' },
@@ -233,7 +262,7 @@ const AboutPage = () => {
                 : 'text-neutral-200 bg-none ring-2 ring-neutral-800 hover:scale-105'
             }`}
           >
-            About
+            Bio
           </button>
         </div>
 
@@ -261,7 +290,7 @@ const AboutPage = () => {
                           className='w-full flex flex-row justify-start'
                         >
                           {/* Left Section */}
-                          <div className='bg-neutral-700 cursor-pointer w-full sm:w-2/5 transition duration-300 ease-in-out transform hover:scale-105 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1'>
+                          <div className='bg-neutral-700 w-full sm:w-2/5 transition duration-300 ease-in-out transform hover:scale-105 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1'>
                             <span className='text-accent text-xs'>
                               {exp.time}
                             </span>
@@ -286,7 +315,10 @@ const AboutPage = () => {
                         </div>
                       ) : (
                         index % 2 != 0 && (
-                          <div className='w-full flex flex-row justify-start'>
+                          <div
+                            key={index}
+                            className='w-full flex flex-row justify-start'
+                          >
                             {/* Left Section */}
                             <div className='w-0 sm:w-2/5'></div>
                             {/* Center Section */}
@@ -300,7 +332,7 @@ const AboutPage = () => {
                             {/* Right Section */}
                             <div
                               key={index}
-                              className='bg-neutral-700 cursor-pointer w-11/12 sm:w-2/5 transition duration-300 ease-in-out transform hover:scale-105 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1'
+                              className='bg-neutral-700 w-11/12 sm:w-2/5 transition duration-300 ease-in-out transform hover:scale-105 py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1'
                             >
                               <span className='text-accent text-xs'>
                                 {exp.time}
@@ -347,7 +379,7 @@ const AboutPage = () => {
                     {skills.languages.map((skill, index) => (
                       <li
                         key={index}
-                        className='bg-neutral-700 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
+                        className='bg-neutral-700 transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
                       >
                         <div className='xl:w-full xl:h-[180px] rounded-xl flex justify-center items-center group'>
                           <div className='text-3xl xl:text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
@@ -372,7 +404,7 @@ const AboutPage = () => {
                     {skills.librariesFrameworks.map((skill, index) => (
                       <li
                         key={index}
-                        className='bg-neutral-700 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
+                        className='bg-neutral-700 transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
                       >
                         <div className='xl:w-full xl:h-[180px] rounded-xl flex justify-center items-center group'>
                           <div className='text-3xl xl:text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
@@ -397,7 +429,7 @@ const AboutPage = () => {
                     {skills.developerTools.map((skill, index) => (
                       <li
                         key={index}
-                        className='bg-neutral-700 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
+                        className='bg-neutral-700 transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
                       >
                         <div className='xl:w-full xl:h-[180px] rounded-xl flex justify-center items-center group'>
                           <div className='text-3xl xl:text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
@@ -434,7 +466,7 @@ const AboutPage = () => {
                     {education.info.map((ed, index) => (
                       <li
                         key={index}
-                        className='font-mono cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 bg-neutral-700 h-auto py-6 px-10 rounded-xl flex flex-col lg:flex-row justify-between items-center gap-4'
+                        className='font-mono transition duration-300 ease-in-out transform hover:scale-105 bg-neutral-700 h-auto py-6 px-10 rounded-xl flex flex-col lg:flex-row justify-between items-center gap-4'
                       >
                         <div className='flex flex-col'>
                           <span className='text-accent text-xs'>{ed.date}</span>
@@ -449,8 +481,8 @@ const AboutPage = () => {
                         <Image
                           src={ed.image}
                           alt=''
-                          width={50}
-                          height={50}
+                          width={80}
+                          height={80}
                           className='w-12 h-12 rounded-full object-cover object-center'
                         />
                       </li>
@@ -463,7 +495,7 @@ const AboutPage = () => {
 
           {/* INVOLVEMENTS */}
           {activeTab === 'involvements' && (
-            <div className='w-full'>
+            <div className='w-full h-full'>
               <div className='flex flex-col gap-[30px] text-center xl:text-left'>
                 {/* HEADER */}
                 <h3 className='text-4xl text-neutral-300 font-bold'>
@@ -473,15 +505,15 @@ const AboutPage = () => {
                   {involvements.desc}
                 </p>
                 {/* INVOLVEMENTS LIST */}
-                <div className='h-[400px]'>
+                <div className='h-full'>
                   <ul className='grid grid-cols-1 gap-[30px]'>
                     {involvements.involvements.map((involvement, index) => (
                       <li
                         key={index}
-                        className='font-mono cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 bg-neutral-700 h-auto py-6 px-10 rounded-xl flex flex-col lg:flex-row justify-between items-center gap-4'
+                        className='font-mono transition duration-300 ease-in-out transform hover:scale-105 bg-neutral-700 h-auto py-6 px-10 rounded-xl flex flex-col lg:flex-row justify-between items-center'
                       >
-                        <div className='flex flex-col'>
-                          <h3 className='text-neutral-200 text-xl max-w-[360px] min-h-[50px]'>
+                        <div className='flex flex-col gap-3'>
+                          <h3 className='text-neutral-200 text-xl max-w-[560px]'>
                             {involvement.involvement}
                           </h3>
                           <p className='text-accent text-xs'>

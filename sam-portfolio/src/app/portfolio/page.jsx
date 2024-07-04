@@ -239,7 +239,7 @@ const PortfolioPage = () => {
               {projects.info.map((project, index) => (
                 <li
                   key={index}
-                  className='bg-neutral-700 cursor-pointer transition duration-300 ease-in-out transform hover:scale-105 h-auto py-6 px-10 rounded-xl flex flex-col justify-center items-center gap-4'
+                  className='bg-neutral-700 transition duration-300 ease-in-out transform hover:scale-105 h-auto py-6 px-10 rounded-xl flex flex-col justify-center items-center gap-4'
                 >
                   {/* IMAGE */}
                   <div className='relative h-[180px] w-full flex  justify-center items-center mb-4'>

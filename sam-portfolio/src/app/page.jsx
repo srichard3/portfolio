@@ -21,7 +21,7 @@ const Homepage = () => {
               Sam Richard
             </div>
             <span
-              className='text-sm lg:text-2xl md:text-lg animate-text-gradient bg-gradient-to-r from-neutral-500 via-neutral-900 to-neutral-500
+              className='text-sm lg:text-3xl md:text-lg animate-text-gradient bg-gradient-to-r from-neutral-500 via-neutral-900 to-neutral-500
     bg-[200%_auto] bg-clip-text text-transparent mb-16'
             >
               Software Engineer

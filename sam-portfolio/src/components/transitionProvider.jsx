@@ -11,13 +11,13 @@ const TransitionProvider = ({ children }) => {
   const getBackgroundClass = pathName => {
     switch (pathName) {
       case '/about':
-        return 'w-screen h-screen bg-gradient-to-b from-neutral-800 to-black overflow-auto'
+        return 'w-screen h-screen bg-gradient-to-b from-neutral-800 to-black overflow-y-auto overflow-x-hidden'
       case '/portfolio':
         return 'w-screen h-screen bg-gradient-to-b from-neutral-800 to-black'
       case '/contact':
-        return 'w-screen h-screen bg-gradient-to-b from-neutral-800 to-black overflow-auto'
+        return 'w-screen h-screen bg-gradient-to-b from-neutral-800 to-black overflow-y-auto overflow-x-hidden'
       default:
-        return 'w-screen h-screen bg-gradient-to-b from-neutral-200 to-black overflow-auto'
+        return 'w-screen h-screen bg-gradient-to-b from-neutral-200 to-black overflow-y-auto overflow-x-hidden'
     }
   }
 
