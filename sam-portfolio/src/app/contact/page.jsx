@@ -98,7 +98,7 @@ const ContactPage = () => {
               placeholder='// name'
             />
             {/* SEND BUTTON */}
-            <button className='w-1/3 sm:w-1/4 bg-gradient-to-br from-neutral-600 to-neutral-900 rounded-full font-semibold text-neutral-400 p-4 transition duration-300 ease-in-out transform hover:from-accent/30 hover:to-accent/60 hover:text-white hover:shadow-lg hover:scale-105'>
+            <button className='w-1/2 sm:w-1/4 text-sm sm:text-xl bg-gradient-to-br from-neutral-600 to-neutral-900 rounded-full font-semibold text-neutral-400 p-4 transition duration-300 ease-in-out transform hover:from-accent/30 hover:to-accent/60 hover:text-white hover:shadow-lg hover:scale-105'>
               Send
             </button>
 
@@ -109,7 +109,7 @@ const ContactPage = () => {
               </span>
             )}
             {error && (
-              <span className='font-mono text-sm text-it text-red-600 opacity-60'>
+              <span className='font-mono text-sm text-it text-red/60 opacity-60'>
                 Something went wrong!
               </span>
             )}

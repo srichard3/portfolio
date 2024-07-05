@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
+import Link from 'next/link'
 
 const Homepage = () => {
   const ref = useRef()
@@ -15,8 +16,8 @@ const Homepage = () => {
     >
       <div className='h-full relative' ref={ref}>
         {/* HOME HEADER */}
-        <div className='w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center text-8xl text-center'>
-          <div className='flex flex-col items-center justify-center'>
+        <div className='w-screen h-[calc(100vh-6rem)] flex flex-col items-center justify-center text-8xl text-center gap-20'>
+          <div className='h-1/2 flex flex-col items-center justify-end'>
             <div className='lg:text-9xl md:text-7xl text-6xl bg-gradient-to-br from-neutral-600 via-black to-neutral-600 bg-clip-text text-transparent'>
               Sam Richard
             </div>
@@ -27,7 +28,12 @@ const Homepage = () => {
               Software Engineer
             </span>
           </div>
-
+          <Link
+            href='/about'
+            className='text-xs sm:text-base text-neutral-500 p-4 transition duration-300 ease-in-out transform hover:text-white hover:scale-105'
+          >
+            Explore
+          </Link>
           {/* <motion.svg
             initial={{ opacity: 0.1, y: 0 }}
             animate={{ opacity: 0.4, y: '10px' }}

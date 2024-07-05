@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
+import Link from 'next/link'
 
 import {
   FaJsSquare,
@@ -104,9 +105,9 @@ const skills = {
     { name: 'Vite', icon: <SiVite /> },
     { name: 'PostgresSQL', icon: <SiPostgresql /> },
     { name: 'MongoDB', icon: <SiMongodb /> },
-    { name: 'Framer Motion', icon: <SiFramer /> },
+    { name: 'Framer', icon: <SiFramer /> },
     { name: 'TailwindCSS', icon: <SiTailwindcss /> },
-    { name: 'TanStack Router', icon: <GiPalmTree /> },
+    { name: 'TanStack', icon: <GiPalmTree /> },
     { name: 'REST API', icon: <PiGearFill /> },
     { name: 'Flask', icon: <SiFlask /> },
     { name: 'Git CI/CD', icon: <FaGitAlt /> },
@@ -185,16 +186,19 @@ const involvements = {
 
 const about = {
   title: 'My Bio',
+  oneliner: 'Welcome to my website, built with Next.js, Framer, and Tailwind!',
   desc: 'Results-driven computer science and business graduate from Loyola Marymount University with a strong background in software development, artificial intelligence, and project management. Known for building products in modern frameworks and languages, mentoring students in AI/ML concepts, and spearheading innovative solutions in high-growth environments. A life-long learner, proactive team-player, and proponent of the growth mindset.',
   info: [
     { fieldName: '/name', value: 'Sam Richard' },
     { fieldName: '/location', value: 'Los Angeles, CA' },
-    { fieldName: '/email', value: 's.anthrichard02@gmail.com' }
+    { fieldName: '/email', value: 'me@samrichard.dev' },
+    { fieldName: '', value: '' },
+    { fieldName: '/preferred-dev', value: 'Full-Stack' }
   ]
 }
 
 const AboutPage = () => {
-  const [activeTab, setActiveTab] = useState('experience')
+  const [activeTab, setActiveTab] = useState('about')
 
   return (
     <motion.div
@@ -206,9 +210,9 @@ const AboutPage = () => {
       }}
       className='min-h-full items-center justify-center xl:py-0'
     >
-      <div className='flex items-top mx-auto px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 gap-14 py-12'>
+      <div className='flex flex-col sm:flex-row items-top mx-auto px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 gap-14 py-12'>
         {/* TABS LIST */}
-        <div className='flex flex-col items-top justify-center h-full w-1/2 max-w-[380px] mt-4 mx-auto xl:mx-0 gap-8'>
+        <div className='flex flex-col items-top justify-center h-full w-1/2 max-w-[380px] mt-4 mx-auto xl:mx-0 gap-4 sm:gap-8'>
           {/* EXPERIENCE */}
           <button
             onClick={() => setActiveTab('experience')}
@@ -379,7 +383,7 @@ const AboutPage = () => {
                     {skills.languages.map((skill, index) => (
                       <li
                         key={index}
-                        className='bg-neutral-700 transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
+                        className='bg-neutral-700 transition duration-300 ease-in-out transform  w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-5'
                       >
                         <div className='xl:w-full xl:h-[180px] rounded-xl flex justify-center items-center group'>
                           <div className='text-3xl xl:text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
@@ -404,7 +408,7 @@ const AboutPage = () => {
                     {skills.librariesFrameworks.map((skill, index) => (
                       <li
                         key={index}
-                        className='bg-neutral-700 transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
+                        className='bg-neutral-700 transition duration-300 ease-in-out transform w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-5'
                       >
                         <div className='xl:w-full xl:h-[180px] rounded-xl flex justify-center items-center group'>
                           <div className='text-3xl xl:text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
@@ -429,7 +433,7 @@ const AboutPage = () => {
                     {skills.developerTools.map((skill, index) => (
                       <li
                         key={index}
-                        className='bg-neutral-700 transition duration-300 ease-in-out transform hover:scale-105 w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-1'
+                        className='bg-neutral-700 transition duration-300 ease-in-out transform w-11/12 xl:h-[184px] py-4 px-10 xl:px-6 xl:py-10 rounded-xl flex flex-col justify-center items-center gap-3 xl:gap-5'
                       >
                         <div className='xl:w-full xl:h-[180px] rounded-xl flex justify-center items-center group'>
                           <div className='text-3xl xl:text-7xl text-neutral-300 group-hover:text-accent group-hover:scale-110 transition-all duration-300'>
@@ -451,7 +455,7 @@ const AboutPage = () => {
 
           {/* EDUCATION */}
           {activeTab === 'education' && (
-            <div className='w-full'>
+            <div className='w-full h-full'>
               <div className='flex flex-col gap-[30px] text-center xl:text-left'>
                 {/* HEADER */}
                 <h3 className='text-4xl text-neutral-200 font-bold'>
@@ -461,7 +465,7 @@ const AboutPage = () => {
                   {education.desc}
                 </p>
                 {/* EDUCATION LIST */}
-                <div className='h-[400px]'>
+                <div className='h-full'>
                   <ul className='grid grid-cols-1 gap-[30px]'>
                     {education.info.map((ed, index) => (
                       <li
@@ -481,9 +485,9 @@ const AboutPage = () => {
                         <Image
                           src={ed.image}
                           alt=''
-                          width={80}
-                          height={80}
-                          className='w-12 h-12 rounded-full object-cover object-center'
+                          width={50}
+                          height={50}
+                          className='w-20 h-20 rounded-full object-cover object-center'
                         />
                       </li>
                     ))}
@@ -539,7 +543,7 @@ const AboutPage = () => {
 
           {/* ABOUT */}
           {activeTab === 'about' && (
-            <div className='w-full text-center xl:text-left'>
+            <div className='w-full text-center '>
               <div className='flex flex-col gap-[30px]'>
                 {/* HEADER */}
                 <div className='flex flex-row items-center gap-[30px]'>
@@ -554,11 +558,14 @@ const AboutPage = () => {
                     {about.title}
                   </h3>
                 </div>
-                <p className='max-w-[700px] text-white/60 mx-auto xl:mx-0'>
+                <p className='max-w-[700px] text-white/60 mx-auto xl:mx-0 xl:text-left'>
+                  {about.oneliner}
+                </p>
+                <p className='max-w-[700px] text-white/60 mx-auto xl:mx-0 xl:text-left'>
                   {about.desc}
                 </p>
                 {/* INFO LIST */}
-                <ul className='grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0'>
+                <ul className='grid grid-cols-1 xl:grid-cols-2 gap-y-6 max-w-[620px] mx-auto xl:mx-0 xl:text-left mt-4'>
                   {about.info.map((info, index) => (
                     <li
                       key={index}
@@ -573,6 +580,15 @@ const AboutPage = () => {
                     </li>
                   ))}
                 </ul>
+                {/* SEND BUTTON */}
+                <div className='flex w-full items-center justify-center gap-4 mt-16'>
+                  <Link
+                    href='/portfolio'
+                    className='w-1/2 text-sm sm:text-xl ring-1 ring-neutral-500 rounded-lg text-neutral-400 p-4 transition duration-300 ease-in-out transform hover:ring-0 hover:bg-gradient-to-br hover:from-accent/30 hover:to-accent/60 hover:text-black hover:shadow-lg'
+                  >
+                    View My Work
+                  </Link>
+                </div>
               </div>
             </div>
           )}
