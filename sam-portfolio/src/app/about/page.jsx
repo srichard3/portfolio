@@ -153,8 +153,13 @@ const involvements = {
     { involvement: 'LMU Roundnet', title: 'President', image: '' },
     { involvement: 'Beta Theta Pi ', title: 'Vice President', image: '' },
     {
-      involvement: 'LMU Campus Blood Drive',
+      involvement: 'LMU Blood Drive',
       title: 'Head Student Coordinator',
+      image: ''
+    },
+    {
+      involvement: 'LMU Campus Ministry',
+      title: 'Student Minister & Retreat Leader',
       image: ''
     },
     {
